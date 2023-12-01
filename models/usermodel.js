@@ -5,6 +5,10 @@ const createuser=mongoose.Schema({
     "License":{
         type:String,
     },
+    "Amount":{
+        type:Number,
+        default:0,
+    },
     "Phonenumber":{
         type:String,
     },

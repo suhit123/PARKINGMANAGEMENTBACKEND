@@ -8,7 +8,7 @@ exports.authorize=async(req,res)=>{
     if(token){
         const decode=await jwt.verify(token,"shhhsecret");
         const userdata=await userschema.findOne({Email:decode.Email});
-        res.status(200).json({id:userdata._id,Name:userdata.Name,Email:userdata.Email,Phonenumber:userdata.Phonenumber,License:userdata.License});
+        res.status(200).json({id:userdata._id,Name:userdata.Name,Email:userdata.Email,Phonenumber:userdata.Phonenumber,License:userdata.License,Amount:userdata.Amount});
     }
     else{
         res.status(500).json({message:"Session expired!"})

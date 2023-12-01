@@ -12,7 +12,8 @@ exports.createuser=async(req,res)=>{
         Email:req.body.Email,
         Phonenumber:req.body.Phonenumber,
         License:req.body.License,
-        Password:hashpassword
+        Password:hashpassword,
+        Amount:0
     }
     await createschema.create(user).then(()=>{
         console.log("successfully added")
@@ -33,4 +34,4 @@ exports.createuser=async(req,res)=>{
             res.status(400).send("Email already exist!");
         }
     }
-} 
+}
